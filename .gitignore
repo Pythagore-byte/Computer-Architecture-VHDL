@@ -1,0 +1,11 @@
+work/
+output_files/
+db/
+incremental_db/
+transcript
+*.sof       # ignore tous les fichiers se terminant par .sof (bitstream Quartus)
+*.wlf       # ignore les fichiers de log de forme d'onde ModelSim
+*.vcd       # ignore les traces VCD
+*.log       # ignore tous les logs
+*.pdf       # ignore tous les PDF
+!rapport_projet.pdf  # sauf celui-ci !
