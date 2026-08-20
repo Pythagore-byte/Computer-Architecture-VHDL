@@ -8,9 +8,9 @@ entity register_file is
         clk:   in std_logic;
         reset: in std_logic;
         WE:    in std_logic;
-        RA:    in std_logic;
-        RB:    in std_logic;
-        RW:    in std_logic;
+        RA:    in std_logic_vector(3 downto 0);
+        RB:    in std_logic_vector(3 downto 0);
+        RW:    in std_logic_vector(3 downto 0);
         W:     in std_logic_vector(31 downto 0);
         A:     out std_logic_vector(31 downto 0);
         B:     out std_logic_vector(31 downto 0)
@@ -19,13 +19,15 @@ end entity;
 
 architecture rtl of register_file is
     type table is array (15 downto 0) of std_logic_vector(31 downto 0);
-    -- fonction d'initialisatio du banc de registre
+    -- fonction d'initialisation du banc de registre
     function init_banc return table is
         variable result : table;
+    begin
         for i in 14 downto 0 loop
             result(i):=(others=>'0');
         end loop;
-        result(15):=x"00000030"; --valeur de derniere case du registre
+        result(15):=x"00000030"; --valeur de derniere case du 
+        return result;
     end init_banc;
         signal banc: table := init_banc;
 
@@ -45,3 +47,4 @@ begin
     
  
 end architecture rtl;
+
