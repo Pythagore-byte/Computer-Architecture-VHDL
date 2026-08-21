@@ -32,5 +32,7 @@ architecture RTL of instruction_memory is
     end init_mem;
     signal mem: RAM64x32 := init_mem;
 begin
-    Instruction <= mem(to_integer(unsigned (PC)));
+    -- Instruction <= mem(to_integer(unsigned (PC)));
+    -- On ne lit que les bits 5 à 0 de l'adresse PC (soit de 0 à 63)
+        Instruction <= mem(to_integer(unsigned(PC(5 downto 0))));
 end architecture;
