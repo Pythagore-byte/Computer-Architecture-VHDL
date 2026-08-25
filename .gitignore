@@ -1,12 +1,21 @@
+# Dossiers de compilation et de cache Quartus / ModelSim
 work/
 output_files/
 db/
 incremental_db/
+syn/quartus/db/
+syn/quartus/incremental_db/
+syn/quartus/output_files/
+sim/work/
+
+# Fichiers de logs et temporaires ModelSim
 transcript
-sim/work
-*.sof       # ignore tous les fichiers se terminant par .sof (bitstream Quartus)
-*.wlf       # ignore les fichiers de log de forme d'onde ModelSim
-*.vcd       # ignore les traces VCD
-*.log       # ignore tous les logs
-*.pdf       # ignore tous les PDF
-!rapport_projet.pdf  # sauf celui-ci !
+sim/wlft*
+*.wlf
+*.vcd
+*.log
+
+# Fichiers binaires et documents
+*.sof
+*.pdf
+!rapport_projet.pdf
