@@ -3,12 +3,19 @@
 # ==============================================================================
 
 # 1. Horloge (50 MHz)
-set_location_assignment PIN_AF14 -to clk
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clk
+set_location_assignment PIN_AF14 -to CLK_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to CLK_50
 
-# 2. Reset (Utilisation du bouton poussoir SW0)
-set_location_assignment PIN_AB12 -to reset
-set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to reset
+# 2. Boutons poussoirs (actifs bas, inverses dans top_fpga)
+#    KEY[0] = reset, KEY[1] = IRQ0, KEY[2] = IRQ1
+set_location_assignment PIN_AA14  -to KEY[0]
+set_location_assignment PIN_AA15  -to KEY[1]
+set_location_assignment PIN_W15 -to KEY[2]
+set_location_assignment PIN_AB12 -to SW
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to SW
+foreach i {0 1 2 3} {
+    set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to KEY[$i]
+}
 
 # 3. Afficheur HEX0
 set_location_assignment PIN_AE26 -to HEX0[0]

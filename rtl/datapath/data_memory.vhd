@@ -27,16 +27,8 @@ architecture rtl of data_memory is
         for i in 0 to 63 loop
             result(i) :=std_logic_vector(to_unsigned(i, 32));
         end loop;
-        result(32) :=std_logic_vector(to_unsigned(2, 32));
-        result(33) :=std_logic_vector(to_unsigned(10, 32));
-        result(34) :=std_logic_vector(to_unsigned(7, 32));
-        result(35) :=std_logic_vector(to_unsigned(4, 32));
-        result(36) :=std_logic_vector(to_unsigned(5, 32));
-        result(37) :=std_logic_vector(to_unsigned(9, 32));
-        result(38) :=std_logic_vector(to_unsigned(15, 32));
-        result(39) :=std_logic_vector(to_unsigned(23, 32));
-        result(40) :=std_logic_vector(to_unsigned(17, 32));
-        result(41) :=std_logic_vector(to_unsigned(1, 32));
+        result(16) :=std_logic_vector(to_unsigned(100, 32));
+        result(25) :=std_logic_vector(to_unsigned(36, 32));
 
         return result;
     end init_memory;  

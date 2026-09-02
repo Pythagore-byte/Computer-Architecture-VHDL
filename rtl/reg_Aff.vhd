@@ -21,7 +21,7 @@ end reg_Aff;
 architecture comport of reg_Aff is
     
 begin
-    P1 : process(clk, reset )
+    P1 : process(clk, reset)
     begin
         if reset='1' then
             DATAOUT <=(others=>'0');

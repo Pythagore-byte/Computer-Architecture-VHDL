@@ -13,7 +13,8 @@ entity register_file is
         RW:    in std_logic_vector(3 downto 0);
         W:     in std_logic_vector(31 downto 0);
         A:     out std_logic_vector(31 downto 0);
-        B:     out std_logic_vector(31 downto 0)
+        B:     out std_logic_vector(31 downto 0);
+        R2_dbg: out std_logic_vector(31 downto 0)
     );
 end entity;
 
@@ -44,6 +45,7 @@ begin
     end process ; -- P1
     A<=banc(to_integer(unsigned(RA)));
     B<=banc(to_integer(unsigned(RB)));
+    R2_dbg <= banc(2);
     
  
 end architecture rtl;

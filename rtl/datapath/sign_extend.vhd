@@ -18,7 +18,7 @@ architecture comport of sign_extend is
     signal tmp : std_logic_vector(32-N-1 downto 0);
 begin
     S<=tmp & E;
-    p : process( E , tmp)
+    p : process(E)
     begin
         if E(N-1) = '1' then
             tmp <=(others=>'1');

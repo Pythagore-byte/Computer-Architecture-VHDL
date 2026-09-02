@@ -8,6 +8,7 @@ syn/quartus/incremental_db/
 syn/quartus/output_files/
 sim/work/
 
+sim/
 # Fichiers de logs et temporaires ModelSim
 transcript
 sim/wlft*

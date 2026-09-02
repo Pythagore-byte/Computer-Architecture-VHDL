@@ -19,8 +19,9 @@ entity datapath_complet is
     RegWr       : in std_logic;
     RegSel: in std_logic;
     bus_B_out: out std_logic_vector(31 downto 0);
+    R2_dbg: out std_logic_vector(31 downto 0);
     
-    
+  
     N,Z,C,V     : out std_logic
     
   );
@@ -39,7 +40,7 @@ architecture structural of datapath_complet  is
 begin
     bus_B_out <= busB;
     mux: entity work.mux2to1 generic map(4) port map(Rm, Rd, RegSel, Rb);
-    banc_registre : entity work.register_file port map(clk, reset, RegWr, Rn, Rb, Rd,busW, busA, busB);
+    banc_registre : entity work.register_file port map(clk, reset, RegWr, Rn, Rb, Rd,busW, busA, busB, R2_dbg);
     sign_ext: entity work.sign_extend generic map(8) port map (Imm, out_imm);
     mux1: entity work.mux2to1 port map(busB,out_imm, ALUSrc,mux1_out );
     alu : entity work.alu port map(ALUCtr,busA, mux1_out,AlUout, N,Z,C,V);
