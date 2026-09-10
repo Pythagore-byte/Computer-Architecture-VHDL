@@ -322,8 +322,8 @@ FPGA
 ├── docs/
 │   ├── architecture_block_diagram.png
 │   ├── isa_reference.md
-│   ├── report.pdf
-│   └── simulation_waveforms.png
+│   
+│   
 │
 ├── rtl/
 │   ├── control_unit/
