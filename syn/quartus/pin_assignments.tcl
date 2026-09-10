@@ -77,3 +77,7 @@ foreach port {HEX0 HEX1 HEX2 HEX3 HEX4 HEX5} {
         set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ${port}[${i}]
     }
 }
+
+# 9. Sortie UART TX
+set_location_assignment PIN_D9 -to TX
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TX
